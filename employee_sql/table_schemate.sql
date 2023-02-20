@@ -9,7 +9,8 @@ CREATE TABLE dept_emp(
     emp_no INT NOT NULL,
     dept_no VARCHAR NOT NULL,
     PRIMARY KEY (emp_no, dept_no),
-    FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+    FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
 --Create table and import dept_manager csv
@@ -29,6 +30,7 @@ CREATE TABLE employees(
     last_name VARCHAR NOT NULL,
     sex VARCHAR NOT NULL,
     hire_date VARCHAR NOT NULL
+    FOREIGN KEY (emp_title) REFERENCES titles(title_id)
 );
 
 --Create table and import salaries csv
